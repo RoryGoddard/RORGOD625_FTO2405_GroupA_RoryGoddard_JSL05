@@ -45,7 +45,10 @@ function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
     // Your code here
 
-    //Create an object for storing each guardians playlist
+    // Grab the playlists div for appending playlists later
+    const playlistsDivEl = document.getElementById("playlists")
+
+    // Create an object for storing each guardians playlist
     const guardiansPlaylists = {};
 
 
@@ -56,6 +59,28 @@ function generatePlaylist(guardians, songs) {
     });
 
     console.log(guardiansPlaylists);
+
+    Object.keys(guardiansPlaylists).forEach(guardian => {
+        // Create the div to hold the playlist, and the heading element
+        const guardianPlaylistDivEl = document.createElement("div");
+        const guardianPlaylistHeadingEl = document.createElement("h2");
+        
+        // Add playlist class to div, set heading to be equal to respective guardians name + " Playlist"
+        guardianPlaylistDivEl.classList.add("playlist");
+        guardianPlaylistHeadingEl.textContent = `${guardian}'s Playlist`;
+
+
+        guardiansPlaylists[guardian].forEach(song => {
+            // Define the paragraph and anchor tags for each song
+            const guardianPlaylistParagraphEl = document.createElement("p");
+            const guardianPlaylistAnchorEl = document.createElement("a");
+
+            guardianPlaylistAnchorEl.textContent = `${song.title}`
+            guardianPlaylistParagraphEl.textContent = `by ${song.artist}`
+        })
+            
+        return console.log(guardian, guardiansPlaylists[guardian]);
+    })
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
