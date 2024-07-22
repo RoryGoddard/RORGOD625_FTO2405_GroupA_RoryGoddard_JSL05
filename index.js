@@ -85,6 +85,7 @@ function generatePlaylist(guardians, songs) {
             guardianPlaylistAnchorEl.textContent = `${song.title}`
             guardianPlaylistParagraphEl.textContent = ` by ${song.artist}`
             
+            // Prepend anchor to paragraph element, append paragraph element to playlist div
             guardianPlaylistParagraphEl.prepend(guardianPlaylistAnchorEl)
             guardianPlaylistDivEl.append(guardianPlaylistParagraphEl)
         })
