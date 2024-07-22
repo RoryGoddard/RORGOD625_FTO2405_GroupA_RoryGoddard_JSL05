@@ -69,6 +69,8 @@ function generatePlaylist(guardians, songs) {
         guardianPlaylistDivEl.classList.add("playlist");
         guardianPlaylistHeadingEl.textContent = `${guardian}'s Playlist`;
 
+        // Append heading to playlist div
+        guardianPlaylistDivEl.append(guardianPlaylistHeadingEl)
 
         guardiansPlaylists[guardian].forEach(song => {
             // Define the paragraph and anchor tags for each song
@@ -86,7 +88,7 @@ function generatePlaylist(guardians, songs) {
             guardianPlaylistParagraphEl.prepend(guardianPlaylistAnchorEl)
             guardianPlaylistDivEl.append(guardianPlaylistParagraphEl)
         })
-        
+
         playlistsDivEl.append(guardianPlaylistDivEl)
         return console.log(guardian, guardiansPlaylists[guardian]);
     })
