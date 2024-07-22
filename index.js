@@ -79,13 +79,15 @@ function generatePlaylist(guardians, songs) {
             guardianPlaylistAnchorEl.classList.add("song-title")
             guardianPlaylistParagraphEl.classList.add("song")
 
+            // Set text of anchor and paragraph elements
             guardianPlaylistAnchorEl.textContent = `${song.title}`
             guardianPlaylistParagraphEl.textContent = ` by ${song.artist}`
-
+            
             guardianPlaylistParagraphEl.prepend(guardianPlaylistAnchorEl)
             guardianPlaylistDivEl.append(guardianPlaylistParagraphEl)
         })
-            
+        
+        playlistsDivEl.append(guardianPlaylistDivEl)
         return console.log(guardian, guardiansPlaylists[guardian]);
     })
 }
