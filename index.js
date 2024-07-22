@@ -46,7 +46,7 @@ function generatePlaylist(guardians, songs) {
     // Your code here
 
     // Grab the playlists div for appending playlists later
-    const playlistsDivEl = document.getElementById("playlists")
+    const playlistsDivEl = document.getElementById("playlists");
 
     // Create an empty object for storing each guardians playlist
     const guardiansPlaylists = {};
@@ -68,7 +68,7 @@ function generatePlaylist(guardians, songs) {
         guardianPlaylistHeadingEl.textContent = `${guardian}'s Playlist`;
 
         // Append heading to playlist div
-        guardianPlaylistDivEl.append(guardianPlaylistHeadingEl)
+        guardianPlaylistDivEl.append(guardianPlaylistHeadingEl);
 
         guardiansPlaylists[guardian].forEach(song => {
             // Define the paragraph and anchor tags for each song
@@ -76,20 +76,20 @@ function generatePlaylist(guardians, songs) {
             const guardianPlaylistAnchorEl = document.createElement("a");
 
             // Add classes to anchor and paragraph
-            guardianPlaylistAnchorEl.classList.add("song-title")
-            guardianPlaylistParagraphEl.classList.add("song")
+            guardianPlaylistAnchorEl.classList.add("song-title");
+            guardianPlaylistParagraphEl.classList.add("song");
 
             // Set text of anchor and paragraph elements
-            guardianPlaylistAnchorEl.textContent = `${song.title}`
-            guardianPlaylistParagraphEl.textContent = ` by ${song.artist}`
+            guardianPlaylistAnchorEl.textContent = `${song.title}`;
+            guardianPlaylistParagraphEl.textContent = ` by ${song.artist}`;
             
             // Prepend anchor to paragraph element, append paragraph element to playlist div
-            guardianPlaylistParagraphEl.prepend(guardianPlaylistAnchorEl)
-            guardianPlaylistDivEl.append(guardianPlaylistParagraphEl)
+            guardianPlaylistParagraphEl.prepend(guardianPlaylistAnchorEl);
+            guardianPlaylistDivEl.append(guardianPlaylistParagraphEl);
         })
 
         // Append completed guardian playlist to the playlists div
-        playlistsDivEl.append(guardianPlaylistDivEl)
+        playlistsDivEl.append(guardianPlaylistDivEl);
     })
 }
 
