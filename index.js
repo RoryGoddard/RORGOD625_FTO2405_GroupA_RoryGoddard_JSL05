@@ -84,12 +84,10 @@ function generatePlaylist(guardians, songs) {
             // Prepend anchor to paragraph element, append paragraph element to playlist div
             guardianPlaylistParagraphEl.prepend(guardianPlaylistAnchorEl);
             guardianPlaylistDivEl.append(guardianPlaylistParagraphEl);
-        })
+        });
 
         // Append completed guardian playlist to the playlists div
         playlistsDivEl.append(guardianPlaylistDivEl);
-
-        
     });
 }
 
