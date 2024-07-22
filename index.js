@@ -11,6 +11,20 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    { title: "Family Affair", artist: "Mary J. Blige", genre: "R&B" },
+    { title: "Dilemma", artist: "Nelly & Kelly Rowland", genre: "R&B" },
+    { title: "No One", artist: "Alicia Keys", genre: "R&B" },
+    { title: "It Was A Good Day", artist: "Ice Cube", genre: "Rap" },
+    { title: "Not Like Us", artist: "Kendrick Lamar", genre: "Rap" },
+    { title: "Houdini", artist: "Eminem", genre: "Rap" },
+    { title: "This Is America", artist: "Childish Gambino", genre: "Rap" },
+    { title: "Going Back To Cali", artist: "The Notorious B.I.G.", genre: "Rap" },
+    { title: "Delilah (pull me out of this)", artist: "Fred again..", genre: "EDM" },
+    { title: "Fine Day Anthem", artist: "Skrillex, Boyz Noise, Opus III", genre: "EDM" },
+    { title: "Runaway (U & I)", artist: "Galantis", genre: "EDM" },
+    { title: "Levels", artist: "Avicci", genre: "EDM" },
+    { title: "Calling (Lose My Mind)", artist: "Sebastion Ingrosso, Alesso, Ryan Tedder", genre: "EDM" },
+
     // Feel free to add even more songs
 ];
 
@@ -19,13 +33,29 @@ const songs = [
 const guardians = {
     "Star-Lord": "Rock",
     "Gamora": "Pop",
+    "Drax": "R&B",
+    "Rocket": "Rap",
+    "Groot": "EDM"
     // Add preferences for Drax, Rocket, and Groot
 };
+
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
     // Your code here
+
+    //Create an object for storing each guardians playlist
+    const guardiansPlaylists = {};
+
+
+    Object.keys(guardians).forEach((guardian) => {
+        guardiansPlaylists[guardian] = songs.filter(item => {
+            return item.genre === guardians[guardian];
+        });
+    });
+
+    console.log(guardiansPlaylists);
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
