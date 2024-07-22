@@ -76,7 +76,7 @@ function generatePlaylist(guardians, songs) {
             const guardianPlaylistAnchorEl = document.createElement("a");
 
             guardianPlaylistAnchorEl.textContent = `${song.title}`
-            guardianPlaylistParagraphEl.textContent = `by ${song.artist}`
+            guardianPlaylistParagraphEl.textContent = ` by ${song.artist}`
         })
             
         return console.log(guardian, guardiansPlaylists[guardian]);
