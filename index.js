@@ -56,9 +56,7 @@ function generatePlaylist(guardians, songs) {
         guardiansPlaylists[guardian] = songs.filter(item => {
             return item.genre === guardians[guardian];
         });
-    });
 
-    Object.keys(guardiansPlaylists).forEach(guardian => {
         // Create the div to hold the playlist, and the heading element
         const guardianPlaylistDivEl = document.createElement("div");
         const guardianPlaylistHeadingEl = document.createElement("h2");
@@ -90,7 +88,9 @@ function generatePlaylist(guardians, songs) {
 
         // Append completed guardian playlist to the playlists div
         playlistsDivEl.append(guardianPlaylistDivEl);
-    })
+
+        
+    });
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
