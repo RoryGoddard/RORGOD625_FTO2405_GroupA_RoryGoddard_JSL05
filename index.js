@@ -48,7 +48,7 @@ function generatePlaylist(guardians, songs) {
     // Grab the playlists div for appending playlists later
     const playlistsDivEl = document.getElementById("playlists")
 
-    // Create an object for storing each guardians playlist
+    // Create an empty object for storing each guardians playlist
     const guardiansPlaylists = {};
 
 
