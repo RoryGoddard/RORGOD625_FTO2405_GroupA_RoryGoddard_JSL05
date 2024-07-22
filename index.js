@@ -58,8 +58,6 @@ function generatePlaylist(guardians, songs) {
         });
     });
 
-    console.log(guardiansPlaylists);
-
     Object.keys(guardiansPlaylists).forEach(guardian => {
         // Create the div to hold the playlist, and the heading element
         const guardianPlaylistDivEl = document.createElement("div");
@@ -92,7 +90,6 @@ function generatePlaylist(guardians, songs) {
 
         // Append completed guardian playlist to the playlists div
         playlistsDivEl.append(guardianPlaylistDivEl)
-        return console.log(guardian, guardiansPlaylists[guardian]);
     })
 }
 
