@@ -90,6 +90,7 @@ function generatePlaylist(guardians, songs) {
             guardianPlaylistDivEl.append(guardianPlaylistParagraphEl)
         })
 
+        // Append completed guardian playlist to the playlists div
         playlistsDivEl.append(guardianPlaylistDivEl)
         return console.log(guardian, guardiansPlaylists[guardian]);
     })
