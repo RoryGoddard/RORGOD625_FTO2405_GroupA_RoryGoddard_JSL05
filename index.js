@@ -50,19 +50,19 @@ function generatePlaylist(guardians, songs) {
     // Grab the playlists div for appending playlists later
     const playlistsDivEl = document.getElementById("playlists");
 
-    guardiansPlaylists.forEach(array => {
+    guardiansPlaylists.forEach(arr => {
         // Create the div to hold the playlist, and the heading element
         const guardianPlaylistDivEl = document.createElement("div");
         const guardianPlaylistHeadingEl = document.createElement("h2");
 
         // Add playlist class to div, set heading to be equal to respective guardians name + " Playlist"
         guardianPlaylistDivEl.classList.add("playlist");
-        guardianPlaylistHeadingEl.textContent = `${array.guardian}'s Playlist`;
+        guardianPlaylistHeadingEl.textContent = `${arr.guardian}'s Playlist`;
 
         // Append heading to playlist div
         guardianPlaylistDivEl.append(guardianPlaylistHeadingEl);
 
-        array.playlist.forEach(song => {
+        arr.playlist.forEach(song => {
             // Define the paragraph and anchor tags for each song
             const guardianPlaylistParagraphEl = document.createElement("p");
             const guardianPlaylistAnchorEl = document.createElement("a");
