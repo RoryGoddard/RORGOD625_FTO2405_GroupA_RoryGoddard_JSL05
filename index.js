@@ -42,33 +42,27 @@ const guardians = {
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
-    // Use the map() function to create playlists for each Guardian
-    // Your code here
+    // Define guardianPlaylists as equal to map function array of objects
+    const guardiansPlaylists = Object.entries(guardians).map(([guardian, genre]) => ({
+        guardian, playlist: songs.filter(song => song.genre === genre)
+    }));
 
     // Grab the playlists div for appending playlists later
     const playlistsDivEl = document.getElementById("playlists");
 
-    // Create an empty object for storing each guardians playlist
-    const guardiansPlaylists = {};
-
-
-    Object.keys(guardians).forEach((guardian) => {
-        guardiansPlaylists[guardian] = songs.filter(item => {
-            return item.genre === guardians[guardian];
-        });
-
+    guardiansPlaylists.forEach(array => {
         // Create the div to hold the playlist, and the heading element
         const guardianPlaylistDivEl = document.createElement("div");
         const guardianPlaylistHeadingEl = document.createElement("h2");
-        
+
         // Add playlist class to div, set heading to be equal to respective guardians name + " Playlist"
         guardianPlaylistDivEl.classList.add("playlist");
-        guardianPlaylistHeadingEl.textContent = `${guardian}'s Playlist`;
+        guardianPlaylistHeadingEl.textContent = `${array.guardian}'s Playlist`;
 
         // Append heading to playlist div
         guardianPlaylistDivEl.append(guardianPlaylistHeadingEl);
 
-        guardiansPlaylists[guardian].forEach(song => {
+        array.playlist.forEach(song => {
             // Define the paragraph and anchor tags for each song
             const guardianPlaylistParagraphEl = document.createElement("p");
             const guardianPlaylistAnchorEl = document.createElement("a");
@@ -80,11 +74,11 @@ function generatePlaylist(guardians, songs) {
             // Set text of anchor and paragraph elements
             guardianPlaylistAnchorEl.textContent = `${song.title}`;
             guardianPlaylistParagraphEl.textContent = ` by ${song.artist}`;
-            
+
             // Prepend anchor to paragraph element, append paragraph element to playlist div
             guardianPlaylistParagraphEl.prepend(guardianPlaylistAnchorEl);
             guardianPlaylistDivEl.append(guardianPlaylistParagraphEl);
-        });
+        })
 
         // Append completed guardian playlist to the playlists div
         playlistsDivEl.append(guardianPlaylistDivEl);
